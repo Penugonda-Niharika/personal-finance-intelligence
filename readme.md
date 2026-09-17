@@ -1,240 +1,291 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "62b85ba6-450d-4e5c-86a2-73420af033ba",
-   "metadata": {},
-   "source": [
-    "# Personal Finance Expense Tracker\n",
-    "\n",
-    "## Project Overview\n",
-    "\n",
-    "The Personal Finance Expense Tracker is a beginner-friendly data analysis project built using Python.\n",
-    "\n",
-    "The project analyzes income and expenses to understand spending habits, savings, transaction patterns, and monthly financial activity.\n",
-    "\n",
-    "It uses a small CSV dataset and applies Python, NumPy, Pandas, Matplotlib, and basic statistics.\n",
-    "\n",
-    "## Objectives\n",
-    "\n",
-    "* Calculate total income and expenses.\n",
-    "* Calculate savings and savings percentage.\n",
-    "* Identify the highest spending category.\n",
-    "* Find the largest and smallest expense transactions.\n",
-    "* Calculate average and median expenses.\n",
-    "* Analyze spending by payment method.\n",
-    "* Compare monthly income and expenses.\n",
-    "* Calculate expense percentages by category.\n",
-    "* Practice correlation between numerical variables.\n",
-    "* Present the results using charts and a final report.\n",
-    "\n",
-    "## Technologies Used\n",
-    "\n",
-    "* Python\n",
-    "* NumPy\n",
-    "* Pandas\n",
-    "* Matplotlib\n",
-    "* Jupyter Notebook\n",
-    "\n",
-    "## Project Structure\n",
-    "\n",
-    "```text\n",
-    "Personal-Finance-Expense-Tracker/\n",
-    "│\n",
-    "├── data/\n",
-    "│   └── expenses.csv\n",
-    "│\n",
-    "├── notebooks/\n",
-    "│   └── expense_tracker.ipynb\n",
-    "│\n",
-    "└── README.md\n",
-    "```\n",
-    "\n",
-    "## Dataset Description\n",
-    "\n",
-    "The dataset contains financial transactions with the following columns:\n",
-    "\n",
-    "| Column           | Description                |\n",
-    "| ---------------- | -------------------------- |\n",
-    "| `date`           | Date of the transaction    |\n",
-    "| `category`       | Expense or income category |\n",
-    "| `amount`         | Transaction amount         |\n",
-    "| `type`           | Income or Expense          |\n",
-    "| `payment_method` | Bank, UPI, Card, or Cash   |\n",
-    "\n",
-    "The dataset includes income and expense transactions for January and February 2026.\n",
-    "\n",
-    "## Analysis Performed\n",
-    "\n",
-    "### 1. Income and Expense Calculation\n",
-    "\n",
-    "Calculated:\n",
-    "\n",
-    "* Total income\n",
-    "* Total expenses\n",
-    "* Savings\n",
-    "* Savings percentage\n",
-    "* Percentage of income spent\n",
-    "\n",
-    "### 2. Category Analysis\n",
-    "\n",
-    "Analyzed:\n",
-    "\n",
-    "* Total spending by category\n",
-    "* Average spending by category\n",
-    "* Number of transactions in each category\n",
-    "* Highest spending category\n",
-    "* Most frequent expense category\n",
-    "\n",
-    "### 3. Transaction Analysis\n",
-    "\n",
-    "Found:\n",
-    "\n",
-    "* Largest expense transaction\n",
-    "* Smallest expense transaction\n",
-    "* Difference between largest and smallest expenses\n",
-    "* Total number of transactions\n",
-    "* Number of income and expense transactions\n",
-    "\n",
-    "### 4. Payment Method Analysis\n",
-    "\n",
-    "Calculated total spending through:\n",
-    "\n",
-    "* Bank\n",
-    "* UPI\n",
-    "* Card\n",
-    "* Cash\n",
-    "\n",
-    "### 5. Monthly Analysis\n",
-    "\n",
-    "Compared monthly income and expenses using a grouped bar chart.\n",
-    "\n",
-    "### 6. Statistical Analysis\n",
-    "\n",
-    "Calculated:\n",
-    "\n",
-    "* Mean\n",
-    "* Median\n",
-    "* Minimum\n",
-    "* Maximum\n",
-    "* Correlation between monthly income and expenses\n",
-    "\n",
-    "## Visualizations\n",
-    "\n",
-    "The project includes:\n",
-    "\n",
-    "* Bar chart of expenses by category\n",
-    "* Pie chart of expense distribution\n",
-    "* Bar chart of spending by payment method\n",
-    "* Grouped bar chart of monthly income and expenses\n",
-    "\n",
-    "## Key Insights\n",
-    "\n",
-    "The project helps identify:\n",
-    "\n",
-    "* Where most money is spent.\n",
-    "* Which payment method is used most often.\n",
-    "* The average amount spent per transaction.\n",
-    "* The difference between income and expenses.\n",
-    "* Monthly spending patterns.\n",
-    "* The categories that contribute most to total expenses.\n",
-    "\n",
-    "## How to Run the Project\n",
-    "\n",
-    "### 1. Clone the repository\n",
-    "\n",
-    "```bash\n",
-    "git clone YOUR_GITHUB_REPOSITORY_URL\n",
-    "```\n",
-    "\n",
-    "### 2. Open the project folder\n",
-    "\n",
-    "```bash\n",
-    "cd Personal-Finance-Expense-Tracker\n",
-    "```\n",
-    "\n",
-    "### 3. Install required libraries\n",
-    "\n",
-    "```bash\n",
-    "pip install pandas numpy matplotlib jupyter\n",
-    "```\n",
-    "\n",
-    "### 4. Start Jupyter Notebook\n",
-    "\n",
-    "```bash\n",
-    "jupyter notebook\n",
-    "```\n",
-    "\n",
-    "### 5. Open the notebook\n",
-    "\n",
-    "Open the notebook inside the `notebooks` folder and run the cells.\n",
-    "\n",
-    "## Important Note\n",
-    "\n",
-    "The correlation result may return `NaN` because the income values are the same for both months. Correlation cannot be calculated when one variable has no variation.\n",
-    "\n",
-    "Also, this project uses a small practice dataset, so the results are intended for learning and demonstration rather than real financial decision-making.\n",
-    "\n",
-    "## Learning Outcomes\n",
-    "\n",
-    "Through this project, I practiced:\n",
-    "\n",
-    "* Python data analysis\n",
-    "* NumPy numerical operations\n",
-    "* Pandas DataFrame operations\n",
-    "* Filtering and grouping data\n",
-    "* Descriptive statistics\n",
-    "* Data visualization\n",
-    "* Financial data interpretation\n",
-    "* Basic statistical reasoning\n",
-    "\n",
-    "## Future Improvements\n",
-    "\n",
-    "* Add more months of transaction data.\n",
-    "* Create an interactive dashboard.\n",
-    "* Add budget limits.\n",
-    "* Show overspending alerts.\n",
-    "* Add expense prediction using machine learning.\n",
-    "* Allow users to upload their own CSV files.\n",
-    "* Build a web application for tracking expenses.\n",
-    "\n",
-    "## Author\n",
-    "\n",
-    "Niharika\n",
-    "\n",
-    "## License\n",
-    "\n",
-    "This project is created for educational and portfolio purposes.\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "52693d65-2ef9-4087-88c6-3b9a7701fea1",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.14.6"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+# Personal Finance Intelligence
+
+An exploratory data analysis project that analyzes personal income, expenses, savings, spending patterns, and payment methods using Python and popular data science libraries.
+
+## Project Overview
+
+The goal of this project is to understand personal financial behavior through data analysis and visualization.
+
+The project uses a small expense dataset containing income and expense transactions. It calculates important financial statistics and creates visualizations to identify spending patterns and savings.
+
+## Features
+
+* Calculate total income
+* Calculate total expenses
+* Calculate savings
+* Calculate savings percentage
+* Identify the highest spending category
+* Identify the largest and smallest transactions
+* Calculate average and median expenses
+* Analyze expenses by category
+* Analyze expenses by payment method
+* Calculate monthly income and expenses
+* Compare monthly income and expenses
+* Calculate expense percentages
+* Calculate savings percentage
+* Analyze correlation between monthly income and expenses
+* Create charts using Matplotlib and Seaborn
+
+## Technologies Used
+
+* Python
+* NumPy
+* Pandas
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
+
+## Project Structure
+
+```text
+Personal-Finance-Intelligence/
+│
+├── data/
+│   └── expenses.csv
+│
+├── notebooks/
+│   └── personal_finance.ipynb
+│
+├── README.md
+```
+
+## Dataset Description
+
+The dataset contains the following columns:
+
+| Column           | Description                |
+| ---------------- | -------------------------- |
+| `date`           | Date of the transaction    |
+| `category`       | Expense or income category |
+| `amount`         | Transaction amount         |
+| `type`           | Income or Expense          |
+| `payment_method` | Bank, UPI, Card, or Cash   |
+
+Example categories include:
+
+* Salary
+* Food
+* Transport
+* Shopping
+* Entertainment
+* Rent
+
+## Analysis Workflow
+
+### 1. Data Loading
+
+The dataset is loaded using Pandas.
+
+```python
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("../data/expenses.csv")
+```
+
+### 2. Data Inspection
+
+The dataset is inspected using:
+
+```python
+df.shape
+df.columns
+df.info()
+df.isnull().sum()
+df.describe()
+```
+
+### 3. Income and Expense Analysis
+
+Total income and expenses are calculated using filtering and aggregation.
+
+```python
+total_income = df.loc[df["type"] == "Income", "amount"].sum()
+
+total_expenses = df.loc[
+    df["type"] == "Expense",
+    "amount"
+].sum()
+
+savings = total_income - total_expenses
+```
+
+### 4. Category Analysis
+
+Expenses are grouped by category to identify spending patterns.
+
+```python
+expenses = df.loc[df["type"] == "Expense"]
+
+expense_by_category = (
+    expenses.groupby("category")["amount"]
+    .sum()
+)
+```
+
+### 5. Statistical Analysis
+
+The project calculates:
+
+* Mean
+* Median
+* Minimum
+* Maximum
+* Range
+* Percentage distribution
+* Average expense by category
+
+```python
+average_expense = np.mean(expenses["amount"])
+
+median_expense = np.median(expenses["amount"])
+
+expense_range = (
+    expenses["amount"].max()
+    - expenses["amount"].min()
+)
+```
+
+### 6. Monthly Analysis
+
+The transaction date is converted into a datetime format.
+
+```python
+df["date"] = pd.to_datetime(df["date"])
+
+df["month"] = df["date"].dt.month_name()
+```
+
+Monthly income and expenses are then calculated using `groupby()`.
+
+### 7. Visualization
+
+The project creates different charts, including:
+
+* Expenses by category
+* Expense distribution
+* Expenses by payment method
+* Monthly income versus expenses
+* Category-wise average expenses
+
+Example:
+
+```python
+import matplotlib.pyplot as plt
+
+plt.bar(
+    expense_by_category.index,
+    expense_by_category.values
+)
+
+plt.title("Expenses by Category")
+plt.xlabel("Category")
+plt.ylabel("Amount Spent")
+plt.xticks(rotation=45)
+plt.show()
+```
+
+## Key Insights
+
+The analysis helps answer questions such as:
+
+* How much money was earned?
+* How much money was spent?
+* How much money was saved?
+* Which category consumed the most money?
+* Which payment method was used most frequently?
+* What was the average expense?
+* What was the largest transaction?
+* How did expenses change from month to month?
+* What percentage of income was spent?
+* What percentage of income was saved?
+
+## Important Statistical Note
+
+Correlation between monthly income and expenses may return `NaN` when income remains constant across all months.
+
+This happens because correlation requires variation in both variables. If income is the same every month, its standard deviation is zero, so the correlation cannot be calculated meaningfully.
+
+## How to Run the Project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/personal-finance-intelligence.git
+```
+
+### 2. Move into the project folder
+
+```bash
+cd personal-finance-intelligence
+```
+
+### 3. Install the required libraries
+
+```bash
+pip install pandas numpy matplotlib seaborn jupyter
+```
+
+### 4. Start Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+### 5. Open the notebook
+
+Open:
+
+```text
+notebooks/personal_finance.ipynb
+```
+
+Run the cells in order.
+
+## Learning Outcomes
+
+Through this project, I practiced:
+
+* Loading and inspecting datasets
+* Filtering DataFrames
+* Selecting rows and columns
+* Grouping data using `groupby()`
+* Using aggregation functions
+* Calculating statistics with NumPy
+* Working with dates
+* Performing basic financial analysis
+* Creating data visualizations
+* Understanding correlation
+* Writing a complete exploratory data analysis project
+
+## Future Improvements
+
+Possible future improvements include:
+
+* Adding more months of transaction data
+* Adding a budget limit for each category
+* Detecting overspending
+* Creating a monthly savings prediction
+* Adding interactive dashboards
+* Using real-world anonymized financial data
+* Adding automatic expense categorization
+* Building a simple Streamlit dashboard
+
+## Limitations
+
+* The dataset is small and manually created.
+* The analysis is descriptive and does not use machine learning.
+* The results depend on the quality of the dataset.
+* Correlation does not prove causation.
+
+## Conclusion
+
+Personal Finance Intelligence demonstrates how Python, NumPy, Pandas, Matplotlib, and Seaborn can be used to analyze financial data and convert raw transactions into meaningful insights.
+
+This project helped strengthen the foundations of data analysis, statistics, mathematical implementation, and data visualization before starting core machine learning algorithms.
+
+## Author
+
+**Niharika**
+
+B.Tech CSE — Artificial Intelligence and Machine Learning
